@@ -1,6 +1,6 @@
 # search_product
 
-A new Flutter project.
+Search Producrt By Using SKU ID or Barcoder And Filter by Title or Alias Title
 
 ## Getting Started
 

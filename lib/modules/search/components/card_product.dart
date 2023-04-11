@@ -10,6 +10,7 @@ class CardProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 80.0,
       decoration: BoxDecoration(
         color: const Color.fromARGB(102, 244, 106, 102),
         border: Border.all(color: Colors.black, width: 1.0),
@@ -17,81 +18,55 @@ class CardProduct extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Row(
+            flex: 8,
+            child: Column(
               children: [
                 Expanded(
-                  child: Container(
-                    decoration: const BoxDecoration(
-                      border: Border(
-                        left: BorderSide(
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      showProducts[index].title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )),
-                  Expanded(
                     child: Container(
-                      decoration: const BoxDecoration(
-                        border: Border(
-                          left: BorderSide(
-                            width: 1.0,
-                          ),
-                        ),
-                      ),
+                  child: Text(
+                    showProducts[index].title,
+                    style: const TextStyle(
+                      fontSize: 15.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )),
+                Expanded(
+                  child: Container(
                     child: Text(
                       showProducts[index].aliasTitle,
                       style: const TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0,
                       ),
                     ),
-                )),
+                  ),
+                ),
               ],
             ),
           ),
           Expanded(
-              flex: 1,
-              child: Row(
-                children: [
-                  Expanded(
-                      child: Container(
-                    decoration: const BoxDecoration(
-                      border: Border(
-                        left: BorderSide(
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      'Barcode :\n${showProducts[index].barcode}',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )),
-                  Expanded(
-                      child: Container(
-                    decoration: const BoxDecoration(
-                      border: Border(
-                        left: BorderSide(
-                          width: 1.0,
-                        ),
-                      ),
-                    ),
-                    child: Text(
-                      'Sku :\n${showProducts[index].sku}',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  )),
-                ],
-              ))
+            flex: 10,
+            child: Row(
+              children: [
+                Expanded(
+                    child: Container(
+                  decoration: const BoxDecoration(),
+                  child: Text(
+                    'Barcode :\n${showProducts[index].barcode}',
+                    style: const TextStyle(fontSize: 12.0),
+                  ),
+                )),
+                Expanded(
+                    child: Container(
+                  decoration: const BoxDecoration(),
+                  child: Text(
+                    'Sku :\n${showProducts[index].sku}',
+                    style: const TextStyle(fontSize: 12.0),
+                  ),
+                )),
+              ],
+            ),
+          )
         ],
       ),
     );
