@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tcc_1/modules/search/search_model.dart';
+import '../search_model.dart';
 
 class CardProduct extends StatelessWidget {
   List<Product> showProducts;
