@@ -44,7 +44,7 @@ class _SearchViewState extends State<SearchView> {
               return Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 5.0),
                     child: Row(
                       children: [
                         //** TextField **//
@@ -62,9 +62,16 @@ class _SearchViewState extends State<SearchView> {
                             ),
                           ),
                         ),
+                        const SizedBox(
+                          width: 3.5,
+                        ),
                         //** ID Button **//
                         Expanded(
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color.fromARGB(255, 205, 3, 70),
+                              fixedSize: const Size(5.0, 10.0)
+                            ),
                             onPressed: () {
                               setState(() {
                                 if (searchText == '') {
@@ -74,12 +81,25 @@ class _SearchViewState extends State<SearchView> {
                                 }
                               });
                             },
-                            child: const Text('ID'),
+                            child: const Text(
+                              'ID',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              ),
+                            ),
                           ),
                         ),
                         //** Name Button **//
+                        const SizedBox(
+                          width: 3.5,
+                        ),
                         Expanded(
                           child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color.fromARGB(255, 205, 3, 70),
+                              fixedSize: const Size(5.0, 10.0)
+                            ),
                             onPressed: () {
                               setState(() {
                                 if (searchText == '') {
@@ -89,7 +109,13 @@ class _SearchViewState extends State<SearchView> {
                                 }
                               });
                             },
-                            child: const Text('Name'),
+                            child: const Text(
+                              'Name',
+                              style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              ),
+                            ),
                           ),
                         ),
                       ],
