@@ -14,9 +14,20 @@ class CardProduct extends StatelessWidget {
       child: Container(
         height: 80.0,
         decoration: BoxDecoration(
-          color: const Color(0xFFEEC6CA),
-          border: Border.all(color: Colors.black, width: 1.0),
-        ),
+            color: const Color(0xFFEEC6CA),
+            border: Border.all(
+                color: const Color.fromARGB(255, 122, 122, 122), width: 1.0),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black,
+                offset: Offset(
+                  1.2,
+                  1.2,
+                ),
+                blurRadius: 1.0,
+              ), //BoxShadow//BoxShadow
+            ],
+            borderRadius: BorderRadius.circular(12.0)),
         child: Row(
           children: [
             Expanded(

@@ -36,7 +36,7 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(188, 244, 222, 1),
+      backgroundColor: const Color.fromRGBO(188, 244, 222, 1),
       body: SafeArea(
         child: FutureBuilder(
           future: loadListOfProduct(),
@@ -74,7 +74,7 @@ class _SearchViewState extends State<SearchView> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor:
-                                    Color.fromARGB(255, 238, 100, 143),
+                                    const Color.fromARGB(255, 238, 100, 143),
                                 fixedSize: const Size(5.0, 10.0)),
                             onPressed: () {
                               setState(() {
@@ -102,7 +102,7 @@ class _SearchViewState extends State<SearchView> {
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 backgroundColor:
-                                    Color.fromARGB(255, 230, 129, 146),
+                                    const Color.fromARGB(255, 230, 129, 146),
                                 fixedSize: const Size(5.0, 10.0)),
                             onPressed: () {
                               setState(() {
