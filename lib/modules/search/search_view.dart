@@ -80,7 +80,15 @@ class _SearchViewState extends State<SearchView> {
                         //** Name Button **//
                         Expanded(
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                if (searchText == '') {
+                                  showProducts = products;
+                                } else {
+                                  showProducts = getByName(searchText,products);
+                                }
+                              });
+                            },
                             child: const Text('Name'),
                           ),
                         ),

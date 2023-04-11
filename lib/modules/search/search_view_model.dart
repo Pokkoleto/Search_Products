@@ -31,3 +31,10 @@ List<Product> getById(String key) {
     tmp = [];
   return tmp;
 }
+
+
+List<Product> getByName(String key, List<Product> allProduct) {
+  List<Product> results = [];
+    results = allProduct.where((product) => product.title.toLowerCase().contains(key.toLowerCase())).toList();
+  return results;
+}
