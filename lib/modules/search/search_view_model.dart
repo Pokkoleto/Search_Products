@@ -1,9 +1,7 @@
 import 'package:flutter/services.dart';
 import 'dart:async';
 import 'dart:convert';
-// import 'package:flutter/material.dart';
 import 'search_model.dart';
-// import 'map_id.dart';
 
 Future<List<Product>> loadListOfProduct() async {
   String jsonString = await rootBundle.loadString('assets/SKU.json');

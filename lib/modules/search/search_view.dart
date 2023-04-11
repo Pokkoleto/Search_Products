@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'search_view_model.dart';
 import 'search_model.dart';
-import 'package:tcc_1/modules/search/components/card_product.dart';
+import './components/card_product.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -41,7 +41,6 @@ class _SearchViewState extends State<SearchView> {
           future: loadListOfProduct(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.hasData) {
-              products = snapshot.data;
               return Column(
                 children: [
                   Padding(

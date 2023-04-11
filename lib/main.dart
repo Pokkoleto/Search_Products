@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'modules/search/components/card_product.dart';
-import 'package:tcc_1/modules/search/search_view.dart';
-import 'package:tcc_1/modules/search/search_view_model.dart';
-import 'package:tcc_1/modules/search/search_model.dart';
+import './modules/search/search_view.dart';
+import './modules/search/search_view_model.dart';
+import './modules/search/search_model.dart';
 
 void main() {
   runApp(const MyApp());
