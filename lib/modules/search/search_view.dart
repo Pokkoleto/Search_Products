@@ -36,6 +36,7 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(188, 244, 222, 1),
       body: SafeArea(
         child: FutureBuilder(
           future: loadListOfProduct(),
@@ -44,21 +45,24 @@ class _SearchViewState extends State<SearchView> {
               return Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 5.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: Row(
                       children: [
                         //** TextField **//
                         Expanded(
                           flex: 3,
-                          child: TextField(
-                            onChanged: (val) {
-                              setState(() {
-                                searchText = val;
-                              });
-                            },
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              labelText: 'Search Here',
+                          child: SizedBox(
+                            height: 35.0,
+                            child: TextField(
+                              onChanged: (val) {
+                                setState(() {
+                                  searchText = val;
+                                });
+                              },
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: 'Search Here',
+                              ),
                             ),
                           ),
                         ),
@@ -69,9 +73,9 @@ class _SearchViewState extends State<SearchView> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 205, 3, 70),
-                              fixedSize: const Size(5.0, 10.0)
-                            ),
+                                backgroundColor:
+                                    Color.fromARGB(255, 238, 100, 143),
+                                fixedSize: const Size(5.0, 10.0)),
                             onPressed: () {
                               setState(() {
                                 if (searchText == '') {
@@ -83,9 +87,9 @@ class _SearchViewState extends State<SearchView> {
                             },
                             child: const Text(
                               'ID',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.0,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.0,
                               ),
                             ),
                           ),
@@ -97,23 +101,24 @@ class _SearchViewState extends State<SearchView> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: const Color.fromARGB(255, 205, 3, 70),
-                              fixedSize: const Size(5.0, 10.0)
-                            ),
+                                backgroundColor:
+                                    Color.fromARGB(255, 230, 129, 146),
+                                fixedSize: const Size(5.0, 10.0)),
                             onPressed: () {
                               setState(() {
                                 if (searchText == '') {
                                   showProducts = products;
                                 } else {
-                                  showProducts = getByName(searchText,products);
+                                  showProducts =
+                                      getByName(searchText, products);
                                 }
                               });
                             },
                             child: const Text(
                               'Name',
                               style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16.0,
                               ),
                             ),
                           ),

@@ -2,72 +2,85 @@ import 'package:flutter/material.dart';
 import '../search_model.dart';
 
 class CardProduct extends StatelessWidget {
-  List<Product> showProducts;
-  dynamic index;
+  final List<Product> showProducts;
+  final dynamic index;
 
   CardProduct({required this.showProducts, required this.index});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 80.0,
-      decoration: BoxDecoration(
-        color: const Color.fromARGB(102, 244, 106, 102),
-        border: Border.all(color: Colors.black, width: 1.0),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            flex: 8,
-            child: Column(
-              children: [
-                Expanded(
-                    child: Container(
-                  child: Text(
-                    showProducts[index].title,
-                    style: const TextStyle(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )),
-                Expanded(
-                  child: Container(
-                    child: Text(
-                      showProducts[index].aliasTitle,
-                      style: const TextStyle(
-                        fontSize: 12.0,
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: Container(
+        height: 80.0,
+        decoration: BoxDecoration(
+          color: const Color(0xFFEEC6CA),
+          border: Border.all(color: Colors.black, width: 1.0),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 8,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                        child: Padding(
+                      padding: const EdgeInsets.only(top: 19.0),
+                      child: Text(
+                        showProducts[index].title,
+                        style: const TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                            textBaseline: TextBaseline.alphabetic),
+                      ),
+                    )),
+                    Expanded(
+                      child: Text(
+                        showProducts[index].aliasTitle,
+                        style: const TextStyle(
+                          fontSize: 12.0,
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
-          Expanded(
-            flex: 10,
-            child: Row(
-              children: [
-                Expanded(
-                    child: Container(
-                  decoration: const BoxDecoration(),
-                  child: Text(
-                    'Barcode :\n${showProducts[index].barcode}',
-                    style: const TextStyle(fontSize: 12.0),
-                  ),
-                )),
-                Expanded(
-                    child: Container(
-                  decoration: const BoxDecoration(),
-                  child: Text(
-                    'Sku :\n${showProducts[index].sku}',
-                    style: const TextStyle(fontSize: 12.0),
-                  ),
-                )),
-              ],
-            ),
-          )
-        ],
+            Expanded(
+              flex: 10,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                      child: Container(
+                    decoration: const BoxDecoration(
+                        border: Border(left: BorderSide(width: 1.0))),
+                    child: Center(
+                      child: Text(
+                        'Barcode :\n${showProducts[index].barcode}',
+                        style: const TextStyle(fontSize: 12.0),
+                      ),
+                    ),
+                  )),
+                  Expanded(
+                      child: Container(
+                    decoration: const BoxDecoration(
+                        border: Border(left: BorderSide(width: 1.0))),
+                    child: Center(
+                      child: Text(
+                        'Sku :\n${showProducts[index].sku}',
+                        style: const TextStyle(fontSize: 12.0),
+                      ),
+                    ),
+                  )),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
