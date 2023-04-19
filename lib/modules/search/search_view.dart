@@ -82,11 +82,10 @@ class _SearchViewState extends State<SearchView> {
                                 } else {
                                   final stopwatch = Stopwatch();
                                   stopwatch.start();
-                                  // sleep(Duration(seconds: 2));
                                   showProducts = getById(searchText);
                                   stopwatch.stop();
                                   print(
-                                      '${stopwatch.elapsedMicroseconds} micro second');
+                                      '${stopwatch.elapsedMicroseconds * 0.001} ms');
                                 }
                               });
                             },
