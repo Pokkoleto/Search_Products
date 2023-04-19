@@ -32,9 +32,12 @@ List<Product> getById(String key) {
   return tmp;
 }
 
-
 List<Product> getByName(String key, List<Product> allProduct) {
   List<Product> results = [];
-    results = allProduct.where((product) => product.title.toLowerCase().contains(key.toLowerCase())||product.aliasTitle.toLowerCase().contains(key.toLowerCase())).toList();
+  results = allProduct
+      .where((product) =>
+          product.title.toLowerCase().contains(key.toLowerCase()) ||
+          product.aliasTitle.toLowerCase().contains(key.toLowerCase()))
+      .toList();
   return results;
 }

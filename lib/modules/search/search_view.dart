@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'search_view_model.dart';
 import 'search_model.dart';
@@ -78,10 +76,17 @@ class _SearchViewState extends State<SearchView> {
                                 fixedSize: const Size(5.0, 10.0)),
                             onPressed: () {
                               setState(() {
+                                //TODOshow speed
                                 if (searchText == '') {
                                   showProducts = products;
                                 } else {
+                                  final stopwatch = Stopwatch();
+                                  stopwatch.start();
+                                  // sleep(Duration(seconds: 2));
                                   showProducts = getById(searchText);
+                                  stopwatch.stop();
+                                  print(
+                                      '${stopwatch.elapsedMicroseconds} micro second');
                                 }
                               });
                             },

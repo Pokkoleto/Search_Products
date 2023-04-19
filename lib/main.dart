@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'modules/search/components/card_product.dart';
 import './modules/search/search_view.dart';
-import './modules/search/search_view_model.dart';
-import './modules/search/search_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +15,7 @@ class MyApp extends StatefulWidget {
 class _BodyState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: SearchView(),
     );
   }
