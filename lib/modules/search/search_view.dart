@@ -14,11 +14,12 @@ late List<Product> products;
 late List<Product> showProducts;
 
 String searchText = '';
+SearchViewModel searchviewmodel = SearchViewModel();
 
 void startUp() async {
-  products = await loadListOfProduct();
+  products = await searchviewmodel.loadListOfProduct();
   showProducts = products;
-  createMap(products);
+  searchviewmodel.createMap(products);
 }
 
 class _SearchViewState extends State<SearchView> {
@@ -43,7 +44,7 @@ class _SearchViewState extends State<SearchView> {
 
   FutureBuilder<List<Product>> listOfProducts() {
     return FutureBuilder(
-      future: loadListOfProduct(),
+      future: searchviewmodel.loadListOfProduct(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.hasData) {
           return Column(
@@ -101,11 +102,8 @@ class _SearchViewState extends State<SearchView> {
             if (searchText == '') {
               showProducts = products;
             } else {
-              final stopwatch = Stopwatch();
-              stopwatch.start();
-              showProducts = getByName(key: searchText, allProduct: products);
-              stopwatch.stop();
-              print('${stopwatch.elapsedMicroseconds} mico sec');
+              showProducts = searchviewmodel.getByName(
+                  key: searchText, allProduct: products);
             }
           });
         },
@@ -131,11 +129,7 @@ class _SearchViewState extends State<SearchView> {
             if (searchText == '') {
               showProducts = products;
             } else {
-              final stopwatch = Stopwatch();
-              stopwatch.start();
-              showProducts = getById(searchText);
-              stopwatch.stop();
-              print('${stopwatch.elapsedMicroseconds * 0.001} ms');
+              showProducts = searchviewmodel.getById(searchText);
             }
           });
         },
